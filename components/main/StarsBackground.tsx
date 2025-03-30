@@ -4,28 +4,38 @@ import React, { useState, useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 // @ts-ignore
-import * as random from "maath/random/dist/maath-random.esm";
 
 const StarBackground = (props: any) => {
   const ref: any = useRef();
-  const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(5000), { radius: 1.2 })
-  );
+
+  // Generate random positions for stars
+  const [stars] = useState(() => {
+    const positions = new Float32Array(9000); // Increase number of stars
+    for (let i = 0; i < positions.length; i += 3) {
+      const x = (Math.random() - 0.5) * 5; // Spread stars over larger area
+      const y = (Math.random() - 0.5) * 5;
+      const z = (Math.random() - 0.5) * 5;
+      positions[i] = x;
+      positions[i + 1] = y;
+      positions[i + 2] = z;
+    }
+    return positions;
+  });
 
   useFrame((state, delta) => {
-    ref.current.rotation.x -= delta / 10;
-    ref.current.rotation.y -= delta / 15;
+    ref.current.rotation.x -= delta / 20; // Slower rotation
+    ref.current.rotation.y -= delta / 25;
   });
 
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
-      <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
+      <Points ref={ref} positions={stars} stride={3} frustumCulled {...props}>
         <PointMaterial
           transparent
-          color="#fff"
-          size={0.002}
+          color="#fff" // Set to white
+          size={0.005 + Math.random() * 0.002} // Slight size variation
           sizeAttenuation={true}
-          dethWrite={false}
+          depthWrite={false}
         />
       </Points>
     </group>
