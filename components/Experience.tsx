@@ -3,14 +3,15 @@ import React from "react";
 
 const Experience: React.FC<{}> = () => {
   return (
-    <section id="experience" className="scroll-mt-8">
-      <h2 className="text-white font-semibold text-center text-6xl pt-[35px] ">
+    <section id="experience" className="scroll-mt-8 px-5">
+      <h2 className="text-white font-semibold text-center text-4xl md:text-6xl md:pt-[35px] ">
         EXPERIENCE
       </h2>
-      {/* <p className=" tracking-[0.5em] text-center text-transparent font-light pb-5  bg-clip-text bg-gradient-to-r from-purple-700 to-orange-500  text-2xl ">
-        EXPLORE NOW
-      </p> */}
-      <div className="container mx-auto 2xl pt-5">
+
+      <p className=" text-center text-transparent font-light md:pb-5  bg-clip-text bg-gradient-to-r from-purple-700 to-orange-500 md:text-2xl ">
+        Years of Dedication, Countless Achievements
+      </p>
+      <div className="container mx-auto 2xl">
         <div className="md:flex md:flex-row md:justify-between pt-5">
           <div className="flex items-center gap-3">
             <p className="text-gray-300">
@@ -29,7 +30,7 @@ const Experience: React.FC<{}> = () => {
           </p>
         </div>
 
-        <p className="text-gray-300 pt-5">
+        <p className="text-gray-300 pt-5 text-sm md:text-base">
           Currently, I am building and refining user interfaces by transforming
           UI/UX designs into responsive and high-performance web applications. I
           am optimizing applications for speed, enhancing SEO rankings, and
@@ -37,17 +38,17 @@ const Experience: React.FC<{}> = () => {
           libraries and web APIs to keep the applications modern, secure, and
           scalable.
         </p>
-        <div className="flex-col flex sm:flex-row ">
-          <div className="bg-transparent  mt-5 mr-2 cursor-pointer  rounded-3xl  text-white py-2 px-5  border border-[#2E2E2E] w-max">
+        <div className=" flex flex-row flex-wrap mt-2 md:mt-5 gap-2 text-sm md:text-base">
+          <div className="bg-transparent cursor-pointer  rounded-3xl text-white py-2 px-4  border border-[#2E2E2E] w-max">
             Next.js
           </div>
-          <div className="bg-transparent  mt-5  mr-2 cursor-pointer  rounded-3xl  text-white py-2 px-5  border border-[#2E2E2E] w-max">
+          <div className="bg-transparent  cursor-pointer  rounded-3xl  text-white py-2 px-4  border border-[#2E2E2E] w-max">
             React
           </div>
-          <div className="bg-transparent  mt-5  mr-2 cursor-pointer  rounded-3xl  text-white py-2 px-5  border border-[#2E2E2E] w-max">
+          <div className="bg-transparent cursor-pointer  rounded-3xl  text-white py-2 px-4  border border-[#2E2E2E] w-max">
             JavaScript
           </div>
-          <div className="bg-transparent  mt-5 cursor-pointer  rounded-3xl  text-white py-2 px-5  border border-[#2E2E2E] w-max">
+          <div className="bg-transparent cursor-pointer  rounded-3xl  text-white py-2 px-4  border border-[#2E2E2E] w-max">
             Redux
           </div>
         </div>
@@ -58,7 +59,7 @@ const Experience: React.FC<{}> = () => {
             <p className="text-gray-300">
               <a
                 href="https://otssolutions.com/"
-                className=" text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-orange-500"
+                className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-orange-500"
               >
                 {" "}
                 OTS Solutions{" "}
@@ -71,7 +72,7 @@ const Experience: React.FC<{}> = () => {
           </p>
         </div>
 
-        <p className="text-gray-300 pt-5">
+        <p className="text-gray-300 pt-5 text-sm md:text-base">
           I designed and developed scalable, maintainable web applications using
           modern frontend frameworks like Angular, along with HTML, CSS, and
           JavaScript. I built RESTful APIs with Node.js and MongoDB, ensuring
@@ -80,21 +81,21 @@ const Experience: React.FC<{}> = () => {
           deliver end-to-end solutions, and troubleshot issues across the entire
           technology stack to maintain smooth application operation.
         </p>
-        <div className="flex-col flex sm:flex-row ">
-          <div className="bg-transparent  mt-5  mr-2 cursor-pointer  rounded-3xl  text-white py-2 px-5  border border-[#2E2E2E] w-max">
+        <div className=" flex flex-row flex-wrap mt-2 md:mt-5 gap-2 text-sm md:text-base">
+          <div className="bg-transparent cursor-pointer  rounded-3xl  text-white py-2 px-4  border border-[#2E2E2E] w-max">
             React
           </div>
-          <div className="bg-transparent  mt-5  mr-2 cursor-pointer  rounded-3xl  text-white py-2 px-5  border border-[#2E2E2E] w-max">
+          <div className="bg-transparent cursor-pointer  rounded-3xl  text-white py-2 px-4  border border-[#2E2E2E] w-max">
             Angular
           </div>
-          <div className="bg-transparent  mt-5  mr-2 cursor-pointer  rounded-3xl  text-white py-2 px-5  border border-[#2E2E2E] w-max">
+          <div className="bg-transparent cursor-pointer  rounded-3xl  text-white py-2 px-4  border border-[#2E2E2E] w-max">
             JavaScript
           </div>
-          <div className="bg-transparent  mt-5 cursor-pointer  rounded-3xl  text-white py-2 px-5  border border-[#2E2E2E] w-max">
+          <div className="bg-transparent  cursor-pointer  rounded-3xl  text-white py-2 px-4  border border-[#2E2E2E] w-max">
             Node.js
           </div>
 
-          <div className="bg-transparent  mt-5 cursor-pointer  rounded-3xl  text-white py-2 px-5  border border-[#2E2E2E] w-max">
+          <div className="bg-transparent  cursor-pointer  rounded-3xl  text-white py-2 px-4  border border-[#2E2E2E] w-max">
             MongoDB
           </div>
         </div>
@@ -119,7 +120,7 @@ const Experience: React.FC<{}> = () => {
           </p>
         </div>
 
-        <p className="text-gray-300 pt-5">
+        <p className="text-gray-300 pt-5 text-sm md:text-base">
           I collaborated with senior engineers to design, develop, and maintain
           web applications using the MEAN stack (MongoDB, Express.js, Angular,
           React, Node.js). I assisted in building RESTful APIs with Node.js and
@@ -130,20 +131,20 @@ const Experience: React.FC<{}> = () => {
           assisted in troubleshooting and debugging issues across the entire
           technology stack.
         </p>
-        <div className="flex-col flex sm:flex-row ">
-          <div className="bg-transparent  mt-5  mr-2 cursor-pointer  rounded-3xl  text-white py-2 px-5  border border-[#2E2E2E] w-max">
+        <div className=" flex flex-row flex-wrap mt-2 md:mt-5 gap-2 text-sm md:text-base">
+          <div className="bg-transparent  cursor-pointer  rounded-3xl  text-white py-2 px-4  border border-[#2E2E2E] w-max">
             React
           </div>
-          <div className="bg-transparent  mt-5  mr-2 cursor-pointer  rounded-3xl  text-white py-2 px-5  border border-[#2E2E2E] w-max">
+          <div className="bg-transparent  cursor-pointer  rounded-3xl  text-white py-2 px-4  border border-[#2E2E2E] w-max">
             Angular
           </div>
-          <div className="bg-transparent  mt-5  mr-2 cursor-pointer  rounded-3xl  text-white py-2 px-5  border border-[#2E2E2E] w-max">
+          <div className="bg-transparent  cursor-pointer  rounded-3xl  text-white py-2 px-4  border border-[#2E2E2E] w-max">
             JavaScript
           </div>
-          <div className="bg-transparent  mt-5 cursor-pointer  rounded-3xl  text-white py-2 px-5  border border-[#2E2E2E] w-max">
+          <div className="bg-transparent   cursor-pointer  rounded-3xl  text-white py-2 px-4  border border-[#2E2E2E] w-max">
             Node.js
           </div>
-          <div className="bg-transparent  mt-5 cursor-pointer  rounded-3xl  text-white py-2 px-5  border border-[#2E2E2E] w-max">
+          <div className="bg-transparent   cursor-pointer  rounded-3xl  text-white py-2 px-4  border border-[#2E2E2E] w-max">
             MongoDB
           </div>
         </div>

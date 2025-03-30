@@ -32,13 +32,13 @@ export default function ScrollToTopButton() {
   return (
     showButton && (
       <div
-        className="z-[1] fixed bottom-6 right-6 text-white p-3 rounded-full  cursor-pointer  hover:text-[#fed524]"
+        className="z-[1] fixed bottom-6 right-3 md:bottom-10 md:right-10 text-white p-3 rounded-full  cursor-pointer  hover:text-[#fed524]  animate-bounce"
         onClick={scrollToTop}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
-          className="h-12 w-12"
+          className="h-10 w-10 md:h-11 md:w-11"
         >
           <path
             fill="#d1d5db"

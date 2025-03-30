@@ -3,7 +3,7 @@ import React from "react";
 
 export default function TechStack() {
   return (
-    <div className="flex gap-[3rem]">
+    <div className="flex gap-[1rem] md:gap-[3rem]">
       <div className="flex flex-col items-center justify-center min-w-100 min-h-100">
         <Image src={"/logo/html.svg"} width={80} height={80} alt="html" />
         <p className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-purple-700 to-orange-500">

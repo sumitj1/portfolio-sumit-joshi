@@ -5,15 +5,15 @@ import Link from "next/link";
 
 const Footer: React.FC<{}> = () => {
   return (
-    <div className=" container mx-auto 2xl pt-[50px] pb-8 ">
-      <div className="pb-10 justify-center flex ">
-        {Social_Icons.map((social) => {
+    <div className=" container mx-auto 2xl md:pt-[50px] pb-8 ">
+      <div className="pb-5 md:pb-10 justify-center flex ">
+        {Social_Icons.map((social, index) => {
           return (
             <Link
               href={social.link}
               rel="noopener noreferrer"
               target="_blank"
-              key={social.alt}
+              key={index}
               className="z-[1]"
             >
               <Image
@@ -22,7 +22,7 @@ const Footer: React.FC<{}> = () => {
                 width={30}
                 alt={social.alt}
                 sizes="100vw"
-                className="mx-5"
+                className="mx-2 md:mx-5"
               />
             </Link>
           );
