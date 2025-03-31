@@ -26,7 +26,7 @@ export const Projects_List = [
     title: "Hero FinCorp",
     description:
       "Provide financial solution that match your needs and help you build a better future.",
-    class: "from-green-700 to-green-300",
+    class: "from-green-500 to-green-300",
   },
   {
     link: "https://greenaider.com/",

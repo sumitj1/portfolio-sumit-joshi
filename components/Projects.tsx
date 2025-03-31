@@ -39,7 +39,7 @@ export default function Projects() {
                 </Link>
                 <div className="text-gray-300 p-2 text-center">
                   <p
-                    className={`font-semibold text-l text-transparent bg-clip-text bg-gradient-to-r ${project?.class}`}
+                    className={`font-semibold text-lg text-transparent bg-clip-text bg-gradient-to-r ${project?.class}`}
                   >
                     {project?.title}
                   </p>
