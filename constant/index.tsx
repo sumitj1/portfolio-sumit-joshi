@@ -2,19 +2,19 @@ import { desc } from "framer-motion/client";
 
 export const Social_Icons = [
   {
-    link: "https://github.com/ibrahimmemonn",
+    link: "https://github.com/sumitj1",
     image: "/Github.svg",
-    alt: "Sumit Joshi - Social Media  ",
+    alt: "Sumit Joshi - Github  ",
   },
   {
     link: "https://www.instagram.com/sumitj.exe",
     image: "/Instagram.svg",
-    alt: "Sumit Joshi - Social Media",
+    alt: "Sumit Joshi - Instagram",
   },
   {
     link: "https://www.linkedin.com/in/sumitjoshi181",
     image: "/LinkedIn.svg",
-    alt: "Sumit Joshi - Social Media",
+    alt: "Sumit Joshi - LinkedIn",
   },
 ];
 

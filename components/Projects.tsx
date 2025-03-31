@@ -25,14 +25,14 @@ export default function Projects() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {Projects_List?.map((project: projectPropTypes, index: number) => (
               <div
-                className="w-full relative mx-auto h-auto overflow-hidden rounded-lg z-[1]"
+                className="w-full relative mx-auto h-auto overflow-hidden rounded-lg z-[1] md:max-w-[300px]"
                 key={index}
               >
                 <Link href={project?.link} target="_blank">
                   <Image
                     src={project?.image}
                     alt="image"
-                    className="relative rounded-lg transition-all duration-300 hover:scale-110 cursor-pointer "
+                    className="relative rounded-lg transition-all duration-300 hover:scale-110 cursor-pointer mx-auto"
                     width={300}
                     height={300}
                   />
@@ -43,11 +43,10 @@ export default function Projects() {
                   >
                     {project?.title}
                   </p>
-                  <p className="text-gray-500 text-sm">
-                    {project?.description}
-                  </p>
+                  <p className="text-gray-500 text-sm">{project?.description}</p>
                 </div>
               </div>
+
             ))}
           </div>
         </div>

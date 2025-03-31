@@ -1,10 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import Link from "next/link";
+import React, { useEffect, useRef, useState } from "react";
 
 const Navbar: React.FC<{}> = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef: any = useRef(null);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -16,24 +18,33 @@ const Navbar: React.FC<{}> = () => {
     }
   };
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
+
   return (
     <>
       <div className="w-full h-[65px] bg-['#111'] fixed backdrop-blur-sm z-50 px-10 hidden md:block">
         <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
-          <a
-            title="ibrahim logo"
-            href="/"
-            className="h-auto w-auto flex flex-row items-center"
-          >
-            {/* <Image
-            src="/Logo.svg"
-            alt="Ibrahim Memon - Developer"
-            width={100}
-            height={100}
-            sizes="100vw"
-            className="w-full h-auto"
-          /> */}
-          </a>
+
 
           <div className="flex flex-row gap-2">
             <div
@@ -64,13 +75,13 @@ const Navbar: React.FC<{}> = () => {
 
       {/* mobile screen sidebar */}
 
-      <nav className="backdrop-blur-sm z-[1] md:hidden">
+      <nav className="backdrop-blur-sm md:hidden relative  backdrop-blur-sm z-50 bg-['#111']">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-end mx-auto p-4">
           <button
             onClick={() => setIsOpen(!isOpen)}
             data-collapse-toggle="navbar-hamburger"
             type="button"
-            className="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-white rounded-lg  focus:outline-none focus:ring-1 focus:ring-[#fed524] focus:text-[#fed524]"
+            className="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-[#fff]"
             aria-controls="navbar-hamburger"
             aria-expanded={isOpen ? "true" : "false"}
           >
@@ -91,50 +102,47 @@ const Navbar: React.FC<{}> = () => {
               />
             </svg>
           </button>
+
+          {/* Dropdown Menu */}
           <div
-            className={`${
-              isOpen ? "block" : "hidden"
-            } w-full mt-4 transition-all duration-300 ease-in-out`}
+            className={`absolute top-full w-37 rounded-lg bg-[#111]  shadow-md shadow-white/30 z-[10] transition-all duration-300 ease-in-out transform ${isOpen
+              ? "opacity-100 scale-100 translate-y-0 visible"
+              : "opacity-0 scale-95 -translate-y-2 invisible"
+              }`}
             id="navbar-hamburger"
           >
-            <ul className="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+            <ul className="flex flex-col font-medium">
               <li>
-                <a
-                  href="#"
-                  className="block py-2 px-3 text-white bg-blue-700 rounded-sm dark:bg-blue-600"
-                  aria-current="page"
+                <div
+                  onClick={() => scrollToSection("tech-stack")}
+                  className="block py-2 px-3 text-white rounded-sm cursor-pointer  z-[2]"
                 >
-                  Home
-                </a>
+                  Tech Stack
+                </div>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                <div
+                  onClick={() => scrollToSection("experience")}
+                  className="block py-2 px-3 text-white rounded-sm cursor-pointer  z-[2]"
                 >
-                  Services
-                </a>
+                  Experience
+                </div>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white"
+                <div
+                  onClick={() => scrollToSection("projects")}
+                  className="block py-2 px-3 text-white rounded-sm cursor-pointer  z-[2]"
                 >
-                  Pricing
-                </a>
+                  Projects
+                </div>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                >
-                  Contact
-                </a>
-              </li>
+
             </ul>
           </div>
+
         </div>
       </nav>
+
     </>
   );
 };

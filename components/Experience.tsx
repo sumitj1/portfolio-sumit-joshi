@@ -21,7 +21,7 @@ const Experience: React.FC<{}> = () => {
       </h2>
 
       <p className=" text-center text-transparent font-light md:pb-5  bg-clip-text bg-gradient-to-r from-purple-700 to-orange-500 md:text-2xl ">
-        Years of Dedication, Countless Achievements
+        Mastering Skills Across Diverse Technologies
       </p>
       <div className="container mx-auto 2xl">
         {Experience_List?.map((experience: experienceTypes, index: number) => (
