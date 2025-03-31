@@ -1,12 +1,10 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
 const Navbar: React.FC<{}> = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef: any = useRef(null);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -18,34 +16,25 @@ const Navbar: React.FC<{}> = () => {
     }
   };
 
-  // Close dropdown when clicking outside
+  // backdrop blur effect on scroll on mobile screen
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setIsOpen(false);
+    const navbar = document.getElementById("navbar");
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        navbar?.classList.add("backdrop-blur-sm");
+      } else {
+        navbar?.classList.remove("backdrop-blur-sm");
       }
-    }
-
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isOpen]);
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
       <div className="w-full h-[65px] bg-['#111'] fixed backdrop-blur-sm z-50 px-10 hidden md:block">
         <div className="w-full h-full flex flex-row items-center justify-end m-auto px-[10px]">
-
-
           <div className="flex flex-row gap-2">
             <div
               onClick={() => scrollToSection("tech-stack")}
@@ -73,15 +62,17 @@ const Navbar: React.FC<{}> = () => {
         </div>
       </div>
 
-      {/* mobile screen sidebar */}
-
-      <nav className="backdrop-blur-sm md:hidden relative  backdrop-blur-sm z-50 bg-['#111']">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-end mx-auto p-4">
+      {/* mobile screen dropdown */}
+      <nav
+        className=" md:hidden backdrop-blur-none z-50 bg-['#111'] fixed w-full"
+        id="navbar"
+      >
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-end mx-auto px-2 pt-2">
           <button
             onClick={() => setIsOpen(!isOpen)}
             data-collapse-toggle="navbar-hamburger"
             type="button"
-            className="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-[#fff]"
+            className="inline-flex items-center justify-center p-2 w-8 h-8 text-sm text-white rounded-lg focus:outline-none focus:ring-0"
             aria-controls="navbar-hamburger"
             aria-expanded={isOpen ? "true" : "false"}
           >
@@ -105,17 +96,18 @@ const Navbar: React.FC<{}> = () => {
 
           {/* Dropdown Menu */}
           <div
-            className={`absolute top-full w-37 rounded-lg bg-[#111]  shadow-md shadow-white/30 z-[10] transition-all duration-300 ease-in-out transform ${isOpen
-              ? "opacity-100 scale-100 translate-y-0 visible"
-              : "opacity-0 scale-95 -translate-y-2 invisible"
-              }`}
+            className={`absolute top-full w-37 rounded-lg bg-[#111]  shadow-md shadow-white/30 z-[10] transition-all duration-300 ease-in-out transform mt-2 ${
+              isOpen
+                ? "opacity-100 scale-100 translate-y-0 visible"
+                : "opacity-0 scale-95 -translate-y-2 invisible"
+            }`}
             id="navbar-hamburger"
           >
-            <ul className="flex flex-col font-medium">
+            <ul className="flex flex-col font-normal text-sm">
               <li>
                 <div
                   onClick={() => scrollToSection("tech-stack")}
-                  className="block py-2 px-3 text-white rounded-sm cursor-pointer  z-[2]"
+                  className="block py-1 px-3 text-white rounded-sm cursor-pointer z-[2] "
                 >
                   Tech Stack
                 </div>
@@ -123,7 +115,7 @@ const Navbar: React.FC<{}> = () => {
               <li>
                 <div
                   onClick={() => scrollToSection("experience")}
-                  className="block py-2 px-3 text-white rounded-sm cursor-pointer  z-[2]"
+                  className="block py-1 px-3 text-white rounded-sm cursor-pointer  z-[2]"
                 >
                   Experience
                 </div>
@@ -131,18 +123,15 @@ const Navbar: React.FC<{}> = () => {
               <li>
                 <div
                   onClick={() => scrollToSection("projects")}
-                  className="block py-2 px-3 text-white rounded-sm cursor-pointer  z-[2]"
+                  className="block py-1 px-3 text-white rounded-sm cursor-pointer  z-[2]"
                 >
                   Projects
                 </div>
               </li>
-
             </ul>
           </div>
-
         </div>
       </nav>
-
     </>
   );
 };

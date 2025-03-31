@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Footer: React.FC<{}> = () => {
   return (
-    <div className=" container mx-auto 2xl md:pt-[50px] pb-8 ">
+    <div className=" container mx-auto 2xl md:pt-[50px] pb-8">
       <div className="pb-5 md:pb-10 justify-center flex ">
         {Social_Icons.map((social, index) => {
           return (

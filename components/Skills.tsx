@@ -17,7 +17,7 @@ export default function Skills() {
         </p>
       </div>
 
-      <div className="flex overflow-hidden max-w-[90%] md:max-w-[1100px] mt-[20px] sm:mt-[50px] ">
+      <div className="flex overflow-hidden max-w-[90%] md:max-w-[1100px] mt-[20px] sm:mt-[50px] [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-30px),transparent_100%)] md:[mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-10px),transparent_100%)]">
         <div className="flex space-x-16 animate-loop-scroll">
           <TechStack />
 
