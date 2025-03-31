@@ -22,7 +22,10 @@ const Certifications: React.FC<{}> = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
             {Certifications_List?.map(
               (certification: certificationTypes, index: number) => (
-                <div className="relative mx-auto h-auto overflow-hidden rounded-lg z-[1]">
+                <div
+                  className="relative mx-auto h-auto overflow-hidden rounded-lg z-[1]"
+                  key={index}
+                >
                   <Link href={certification?.link} target="_blank">
                     <Image
                       src={certification?.image}
