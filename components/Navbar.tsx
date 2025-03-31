@@ -43,7 +43,7 @@ const Navbar: React.FC<{}> = () => {
   return (
     <>
       <div className="w-full h-[65px] bg-['#111'] fixed backdrop-blur-sm z-50 px-10 hidden md:block">
-        <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
+        <div className="w-full h-full flex flex-row items-center justify-end m-auto px-[10px]">
 
 
           <div className="flex flex-row gap-2">
