@@ -13,3 +13,30 @@
 .min-h-100 {
   min-height: 100px !important;
 }
+
+/* General scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+  /* Adjust as needed */
+}
+
+/* Scrollbar track styling */
+::-webkit-scrollbar-track {
+  background: #111;
+  opacity: 0;
+  /* Light gray background */
+}
+
+/* Scrollbar thumb styling */
+::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  /* Dark gray handle */
+  border-radius: 5px;
+  /* Rounded corners */
+}
+
+/* Scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #6B21A8, #FB923C);
+  /* Darker gray on hover */
+}
