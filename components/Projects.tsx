@@ -13,7 +13,7 @@ type projectPropTypes = {
 };
 export default function Projects() {
   return (
-    <section id="projects" className="scroll-mt-8 px-5">
+    <section id="projects" className="scroll-mt-8 px-2">
       <h2 className="text-white font-semibold text-center text-4xl md:text-6xl md:pt-[35px]">
         PROJECTS
       </h2>
@@ -43,10 +43,11 @@ export default function Projects() {
                   >
                     {project?.title}
                   </p>
-                  <p className="text-gray-500 text-sm">{project?.description}</p>
+                  <p className="text-gray-500 text-sm">
+                    {project?.description}
+                  </p>
                 </div>
               </div>
-
             ))}
           </div>
         </div>

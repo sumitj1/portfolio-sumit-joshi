@@ -15,7 +15,7 @@ type experienceTypes = {
 
 const Experience: React.FC<{}> = () => {
   return (
-    <section id="experience" className="scroll-mt-8 px-5">
+    <section id="experience" className="scroll-mt-8 px-2">
       <h2 className="text-white font-semibold text-center text-4xl md:text-6xl md:pt-[35px] ">
         EXPERIENCE
       </h2>
@@ -26,15 +26,15 @@ const Experience: React.FC<{}> = () => {
       <div className="container mx-auto 2xl">
         {Experience_List?.map((experience: experienceTypes, index: number) => (
           <div key={index}>
-            <div className="md:flex md:flex-row md:justify-between pt-[20px]">
+            <div className="md:flex md:flex-row md:justify-between pt-[20px] font-semibold">
               <div className="flex items-center gap-3">
-                <p className="text-gray-300">
+                <p className="text-gray-300 ">
                   <Link
                     href={experience?.link}
                     target="_blank"
                     className=" text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-orange-500"
                   >
-                    {experience?.companyName}
+                    {experience?.companyName}{" "}
                   </Link>
                   ({experience?.designation})
                 </p>
@@ -47,11 +47,11 @@ const Experience: React.FC<{}> = () => {
             <p className="text-gray-300 pt-5 text-sm md:text-base">
               {experience?.description}
             </p>
-            <div className=" flex flex-row flex-wrap mt-2 md:mt-5 gap-2 text-sm md:text-base">
+            <div className=" flex flex-row flex-wrap mt-2 md:mt-5 gap-2 text-sm md:text-base ">
               {experience?.technologies?.map((technology: string, index) => (
                 <div
                   key={index}
-                  className="bg-transparent cursor-pointer  rounded-3xl text-white py-2 px-4  border border-[#2E2E2E] w-max"
+                  className="bg-transparent cursor-pointer  rounded-3xl text-white py-2 px-4 border border-[#2E2E2E] transition-all duration-500 w-max hover:bg-gradient-to-r hover:from-purple-700 hover:to-orange-500 z-[2]"
                 >
                   {technology}
                 </div>
