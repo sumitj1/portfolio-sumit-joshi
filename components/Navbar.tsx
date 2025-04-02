@@ -81,7 +81,7 @@ const Navbar: React.FC<{}> = () => {
             onClick={() => setIsOpen(!isOpen)}
             data-collapse-toggle="navbar-hamburger"
             type="button"
-            className="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-[#fff]"
+            className="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-white rounded-lg focus:outline-none focus:ring-0"
             aria-controls="navbar-hamburger"
             aria-expanded={isOpen ? "true" : "false"}
           >
