@@ -40,3 +40,12 @@
   background: linear-gradient(to bottom, #6B21A8, #FB923C);
   /* Darker gray on hover */
 }
+
+
+.swiper,
+.swiper * {
+  user-select: none;
+  -webkit-user-select: none; /* For Safari */
+  -moz-user-select: none;    /* For Firefox */
+  -ms-user-select: none;     /* For old IE */
+}
