@@ -32,7 +32,7 @@ export default function Projects() {
                   <Image
                     src={project?.image}
                     alt="image"
-                    className="relative rounded-lg transition-all duration-300 hover:scale-110 cursor-pointer mx-auto"
+                    className="relative rounded-lg transition-all duration-300 hover:scale-110 cursor-pointer mx-auto min-h-[180px]"
                     width={300}
                     height={300}
                   />

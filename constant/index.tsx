@@ -20,7 +20,7 @@ export const Social_Icons = [
 export const Projects_List = [
   {
     link: "https://www.herofincorp.com/",
-    image: "/herofincorp.png",
+    image: "/projects/herofincorp.png",
     alt: "herofincorp",
     title: "Hero FinCorp",
     description:
@@ -29,13 +29,31 @@ export const Projects_List = [
   },
   {
     link: "https://greenaider.com/",
-    image: "/greenaider.png",
+    image: "/projects/greenaider.png",
     alt: "greenaider",
     title: "Greenaider",
     description:
       "Greenaider empowers organizations of all sizes and their people to achieve net zero emissions faster.",
     class: "from-blue-500 to-blue-200",
   },
+  {
+    link: "http://18.189.96.178:8383/merchant/",
+    image: "/projects/klikidyPay.png",
+    alt: "klikidyPay",
+    title: "Klikidy Pay",
+    description:
+      "",
+    class: "from-yellow-500 to-yellow-200",
+  },
+  {
+    link: "http://159.89.234.66:9051",
+    image: "/projects/weater-coop.png",
+    alt: "weater-coop",
+    title: "Weather Co-op",
+    description:
+      "",
+    class: "from-teal-400 to-teal-200",
+  }
 ];
 
 export const Certifications_List = [
