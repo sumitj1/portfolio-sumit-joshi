@@ -6,6 +6,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import StarsCanvas from "@/components/main/StarsBackground";
 import Navbar from "@/components/Navbar";
 import ScrollToTopButton from "@/components/utils/ScrollToTopButton";
+import DayBackground from "@/components/main/DayBackground";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -41,6 +42,7 @@ export default function RootLayout({
         {/* <SpeedInsights />
         <Analytics /> */}
         <StarsCanvas />
+        {/* <DayBackground /> */}
         <Navbar />
         {children}
         <ScrollToTopButton />
