@@ -1,7 +1,9 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Projects_List } from "@/constant/index";
+import { useTheme } from "@/context/ThemeContext";
 
 type projectPropTypes = {
   link: string;
@@ -12,12 +14,14 @@ type projectPropTypes = {
   class: string;
 };
 export default function Projects() {
+
+  const {theme} =  useTheme()
   return (
-    <section id="projects" className="scroll-mt-8 px-2">
-      <h2 className="text-white font-semibold text-center text-4xl md:text-6xl md:pt-[35px]">
+    <section id="projects" className="scroll-mt-8 px-2 relative">
+      <h2 className={`${theme === 'dark' ? 'text-white' : 'text-gray-700 z-[1]'}  font-semibold text-center text-4xl md:text-6xl md:pt-[35px]`}>
         PROJECTS
       </h2>
-      <p className=" text-center text-transparent font-light md:pb-5  bg-clip-text bg-gradient-to-r from-purple-700 to-orange-500 md:text-2xl ">
+      <p className={`text-center text-transparent font-light md:pb-5  bg-clip-text bg-gradient-to-r ${theme === 'dark' ? 'from-purple-700 to-orange-500' : 'from-purple-800 to-orange-700'} md:text-2xl`}>
         Where Vision Meets Execution
       </p>
       <div className=" max-w-[900px] mx-auto 2xl mt-4">
@@ -43,7 +47,7 @@ export default function Projects() {
                   >
                     {project?.title}
                   </p>
-                  <p className="text-gray-500 text-sm">
+                  <p className={`${theme === 'dark' ? 'text-gray-500' : 'text-gray-700'}} text-sm`}>
                     {project?.description}
                   </p>
                 </div>

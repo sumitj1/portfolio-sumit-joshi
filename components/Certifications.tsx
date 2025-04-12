@@ -1,4 +1,6 @@
+'use client'
 import { Certifications_List, Projects_List } from "@/constant";
+import { useTheme } from "@/context/ThemeContext";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -9,12 +11,13 @@ type certificationTypes = {
 };
 
 const Certifications: React.FC<{}> = () => {
+  const {theme} = useTheme()
   return (
-    <section id="certification" className="scroll-mt-8 px-2">
-      <h2 className="text-white font-semibold text-center text-4xl md:text-6xl md:pt-[35px]">
+    <section id="certification" className="scroll-mt-8 px-2 relative">
+      <h2 className={`font-semibold text-center text-4xl md:text-6xl md:pt-[35px] ${theme === 'dark' ? 'text-white' : 'text-gray-700'}`}>
         CERTIFICATIONS
       </h2>
-      <p className="text-center text-transparent font-light pb-5  bg-clip-text bg-gradient-to-r from-purple-700 to-orange-500 md:text-2xl ">
+      <p className={`text-center text-transparent font-light pb-5  bg-clip-text bg-gradient-to-r ${theme === 'dark' ? 'from-purple-700 to-orange-500' : 'from-purple-800 to-orange-700'} md:text-2xl `}>
         Validating Knowledge, Building Trust
       </p>
 

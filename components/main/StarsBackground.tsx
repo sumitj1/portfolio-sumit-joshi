@@ -42,14 +42,17 @@ const StarBackground = (props: any) => {
   );
 };
 
-const StarsCanvas: React.FC<{}> = () => (
-  <div className="w-full h-auto fixed inset-0 z-[1] ">
-    <Canvas camera={{ position: [0, 0, 1] }}>
-      <Suspense fallback={null}>
-        <StarBackground />
-      </Suspense>
-    </Canvas>
-  </div>
-);
+export default function StarsBackground() {
 
-export default StarsCanvas;
+  return (
+  
+      <div className="w-full h-auto fixed inset-0 z-[1] ">
+        <Canvas camera={{ position: [0, 0, 1] }}>
+          <Suspense fallback={null}>
+            <StarBackground />
+          </Suspense>
+        </Canvas>
+      </div>
+    
+  );
+}

@@ -3,10 +3,10 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import StarsCanvas from "@/components/main/StarsBackground";
 import Navbar from "@/components/Navbar";
 import ScrollToTopButton from "@/components/utils/ScrollToTopButton";
-import DayBackground from "@/components/main/DayBackground";
+import { ThemeProvider } from "@/context/ThemeContext";
+import ThemeBackground from "@/components/main/ThemeBackground";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,18 +34,20 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
   return (
     <html lang="en">
       <body
         className={`${inter.className} bg-[#111] overflow-y-scroll overflow-x-hidden`}
       >
-        {/* <SpeedInsights />
+        <ThemeProvider>
+          {/* <SpeedInsights />
         <Analytics /> */}
-        <StarsCanvas />
-        {/* <DayBackground /> */}
-        <Navbar />
-        {children}
-        <ScrollToTopButton />
+          <ThemeBackground />
+          <Navbar />
+          {children}
+          <ScrollToTopButton />
+        </ThemeProvider>
       </body>
     </html>
   );

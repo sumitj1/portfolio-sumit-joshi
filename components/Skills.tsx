@@ -5,18 +5,20 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { SwiperSlide, Swiper } from "swiper/react";
 import "swiper/css";
 import { Skills_List } from "@/constant";
+import { useTheme } from "@/context/ThemeContext";
 
 export default function Skills() {
+  const {theme} = useTheme()
   return (
     <section
       id="tech-stack"
       className="flex flex-col items-center justify-center h-full md:pt-[35px] scroll-mt-8"
     >
       <div className="flex flex-col justify-around flex-wrap items-center max-w-[900px]">
-        <h1 className="text-white font-semibold text-4xl md:text-6xl">
+        <h1 className={`font-semibold text-4xl md:text-6xl ${theme === 'dark' ? 'text-white' : 'text-gray-700 z-[1]'} `}>
           TECH STACK
         </h1>
-        <p className="text-transparent font-light pb-5  mt-4 bg-clip-text bg-gradient-to-r from-purple-700 to-orange-500 md:text-2xl">
+        <p className={`text-transparent font-light pb-5  mt-4 bg-clip-text bg-gradient-to-r ${theme ===  'dark' ? 'from-purple-700 to-orange-500' : 'from-purple-800 to-orange-800 z-[1]'} md:text-2xl `}>
           ⚡ What Fuels My Code
         </p>
       </div>
@@ -54,7 +56,6 @@ export default function Skills() {
           </SwiperSlide>
         ))}
       </Swiper>
-
     </section>
   );
 }
