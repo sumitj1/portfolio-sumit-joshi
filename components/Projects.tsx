@@ -47,7 +47,7 @@ export default function Projects() {
                   >
                     {project?.title}
                   </p>
-                  <p className={`${theme === 'dark' ? 'text-gray-500' : 'text-gray-700'}} text-sm`}>
+                  <p className={`${theme === 'dark' ? 'text-gray-500' : 'text-gray-700'} text-sm`}>
                     {project?.description}
                   </p>
                 </div>
