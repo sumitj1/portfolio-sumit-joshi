@@ -4,16 +4,27 @@ export const Social_Icons = [
     link: "https://github.com/sumitj1",
     image: "/Github.svg",
     alt: "Sumit Joshi - Github  ",
+    name : 'Github'
   },
   {
     link: "https://www.instagram.com/sumitj.exe",
     image: "/Instagram.svg",
     alt: "Sumit Joshi - Instagram",
+     name : 'Instagram'
   },
   {
     link: "https://www.linkedin.com/in/sumitjoshi181",
     image: "/LinkedIn.svg",
     alt: "Sumit Joshi - LinkedIn",
+    name : 'Linked In'
+
+  },
+  {
+    link: "/Sumit Joshi - Resume 2025.pdf",
+    image: "/logo/resume.svg",
+    alt: "Sumit Joshi - Resume",
+    name : 'Resume'
+
   },
 ];
 

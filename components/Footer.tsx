@@ -4,6 +4,7 @@ import { Social_Icons } from "@/constant";
 import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "@/context/ThemeContext";
+import { Tooltip } from "@heroui/tooltip";
 
 const Footer: React.FC<{}> = () => {
   const { theme } = useTheme();
@@ -19,14 +20,16 @@ const Footer: React.FC<{}> = () => {
               key={index}
               className="z-[1]"
             >
-              <Image
-                src={social.image}
-                height={30}
-                width={30}
-                alt={social.alt}
-                sizes="100vw"
-                className={`mx-2 md:mx-5 ${theme === 'dark' ? '' : 'invert'}`}
-              />
+              <Tooltip content={social.name} color={`${theme === 'dark' ? 'default' : 'foreground'}`}>
+                <Image
+                  src={social.image}
+                  height={30}
+                  width={30}
+                  alt={social.alt}
+                  sizes="100vw"
+                  className={`mx-2 md:mx-5 ${theme === 'dark' ? '' : 'invert'} `}
+                />
+              </Tooltip>
             </Link>
           );
         })}
