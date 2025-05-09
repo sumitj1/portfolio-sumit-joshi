@@ -20,10 +20,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
   };
 
-  // useEffect(() => {
-  //   if (isDayTime()) setTheme('light')
-    
-  // }, [])
+
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}

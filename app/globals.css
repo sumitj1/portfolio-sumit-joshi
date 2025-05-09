@@ -29,7 +29,7 @@
 
 /* Scrollbar thumb styling */
 ::-webkit-scrollbar-thumb {
-  background: #D1D5DB;
+  background: #d1d5db;
   /* Dark gray handle */
   border-radius: 5px;
   /* Rounded corners */
@@ -37,15 +37,37 @@
 
 /* Scrollbar thumb on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #6B21A8, #FB923C);
+  background: linear-gradient(to bottom, #6b21a8, #fb923c);
   /* Darker gray on hover */
 }
-
 
 .swiper,
 .swiper * {
   user-select: none;
   -webkit-user-select: none; /* For Safari */
-  -moz-user-select: none;    /* For Firefox */
-  -ms-user-select: none;     /* For old IE */
+  -moz-user-select: none; /* For Firefox */
+  -ms-user-select: none; /* For old IE */
+}
+
+.experience_card_dark {
+  margin: 20px 0;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  position: relative;
+  z-index: 1;
+}
+
+.experience_card_light {
+  margin: 20px 0;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  position: relative;
+  z-index: 1;
 }

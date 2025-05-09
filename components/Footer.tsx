@@ -9,7 +9,7 @@ import { Tooltip } from "@heroui/tooltip";
 const Footer: React.FC<{}> = () => {
   const { theme } = useTheme();
   return (
-    <div className=" container mx-auto 2xl md:pt-[50px] pb-8 relative">
+    <div className=" container mx-auto 2xl md:pt-[50px] pb-8 relative backdrop-blur-sm z-[1]">
       <div className="pb-5 md:pb-10 justify-center flex ">
         {Social_Icons.map((social, index) => {
           return (

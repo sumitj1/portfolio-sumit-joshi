@@ -11,6 +11,13 @@ export default function ThemeBackground() {
 
 
   return (
-    theme === 'light' ? <DayBackground /> : <StarsBackground />
+    <>
+       <div className={`absolute inset-0 transition-opacity duration-500 ${theme === 'light' ? 'opacity-100' : 'opacity-0'} z-0`}>
+        <DayBackground />
+      </div>
+      <div className={`absolute inset-0 transition-opacity duration-500 ${theme === 'dark' ? 'opacity-100' : 'opacity-0'} z-0`}>
+        <StarsBackground />
+      </div>
+   </>
   )
 }

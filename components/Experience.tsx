@@ -27,7 +27,7 @@ const Experience: React.FC<{}> = () => {
       </p>
       <div className="container mx-auto 2xl">
         {Experience_List?.map((experience: experienceTypes, index: number) => (
-          <div key={index}>
+          <div key={index} className={`${theme === 'dark' ? 'experience_card_dark'  : 'experience_card_light'}`}>
             <div className="md:flex md:flex-row md:justify-between pt-[20px] font-semibold">
               <div className="flex items-center gap-3">
                 <p className={`${theme === 'dark' ? 'text-gray-300' : 'text-gray-700 z-[1]'} `}>

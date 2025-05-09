@@ -40,24 +40,24 @@ const Navbar: React.FC<{}> = () => {
           <div className="flex flex-row gap-2 items-center">
             <div
               onClick={() => scrollToSection("tech-stack")}
-              className={`z-[1] bg-transparent padding-10 cursor-pointer bg-black hover:text-[#fed524] rounded-xl  ${theme ==='dark' ? 'text-white hover:bg-[#2E2E2E]' : 'text-dark hover:bg-[#36454F] '}  py-2 px-5`}
+              className={`z-[1] bg-transparent cursor-pointer rounded-3xl ${theme === 'dark' ? 'text-white ' : 'text-dark'} py-2 px-4   transition-all duration-500 w-max hover:bg-gradient-to-r hover:from-purple-700 hover:to-orange-500`}
             >
               Tech Stack
             </div>
             <div
               onClick={() => scrollToSection("experience")}
-             className={`z-[1] bg-transparent padding-10 cursor-pointer bg-black hover:text-[#fed524] rounded-xl  ${theme ==='dark' ? 'text-white hover:bg-[#2E2E2E]' : 'text-dark hover:bg-[#36454F] '}  py-2 px-5`}
+             className={`z-[1] bg-transparent cursor-pointer rounded-3xl ${theme === 'dark' ? 'text-white ' : 'text-dark'} py-2 px-4   transition-all duration-500 w-max hover:bg-gradient-to-r hover:from-purple-700 hover:to-orange-500`}
             >
               Experience
             </div>
 
             <div
               onClick={() => scrollToSection("projects")}
-             className={`z-[1] bg-transparent padding-10 cursor-pointer bg-black hover:text-[#fed524] rounded-xl  ${theme ==='dark' ? 'text-white hover:bg-[#2E2E2E]' : 'text-dark hover:bg-[#36454F] '}  py-2 px-5`}
+             className={`z-[1] bg-transparent cursor-pointer rounded-3xl ${theme === 'dark' ? 'text-white ' : 'text-dark'} py-2 px-4   transition-all duration-500 w-max hover:bg-gradient-to-r hover:from-purple-700 hover:to-orange-500`}
             >
               Projects
             </div>
-            <div className={`z-[1] bg-transparent padding-10 cursor-pointer bg-black hover:text-[#fed524] rounded-xl  ${theme ==='dark' ? 'text-white hover:bg-[#2E2E2E]' : 'text-dark hover:bg-[#36454F] '}  py-2 px-5`}>
+            <div className={`z-[1] bg-transparent cursor-pointer rounded-3xl ${theme === 'dark' ? 'text-white ' : 'text-dark'} py-2 px-4   transition-all duration-500 w-max hover:bg-gradient-to-r hover:from-purple-700 hover:to-orange-500`}>
               <a href="mailto:sumitjoshi181@gmail.com">Contact</a>
             </div>
             <div className="z-[1] bg-transparent bg-black py-2 pl-5">
