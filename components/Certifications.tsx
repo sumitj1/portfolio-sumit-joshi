@@ -34,7 +34,7 @@ const Certifications: React.FC<{}> = () => {
                     <Image
                       src={certificate?.image}
                       alt="image"
-                      className="relative rounded-lg transition-all duration-300 hover:scale-110 cursor-pointer mx-auto"
+                      className="relative rounded-lg transition-all duration-300 hover:scale-110 cursor-pointer mx-auto h-full"
                       width={300}
                       height={300}
                     />

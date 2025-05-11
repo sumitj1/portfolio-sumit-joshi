@@ -72,6 +72,10 @@ export const Certifications_List = [
     link: "https://udemy-certificate.s3.amazonaws.com/image/UC-67e61a1f-0b4f-4cf8-83eb-a575563f14ff.jpg?v=1680785959000",
     image: "/certifications/nextjs-developer.jpg",
   },
+   {
+    link: "https://simpli-web.app.link/e/L1RTSynLhTb",
+    image: "/certifications/mongodb.png",
+  },
 ];
 
 export const Experience_List = [
