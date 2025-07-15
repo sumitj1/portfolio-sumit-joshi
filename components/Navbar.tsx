@@ -40,24 +40,34 @@ const Navbar: React.FC<{}> = () => {
           <div className="flex flex-row gap-2 items-center">
             <div
               onClick={() => scrollToSection("tech-stack")}
-              className={`z-[1] bg-transparent cursor-pointer rounded-3xl ${theme === 'dark' ? 'text-white ' : 'text-dark'} py-2 px-4   transition-all duration-500 w-max hover:bg-gradient-to-r hover:from-purple-700 hover:to-orange-500`}
+              className={`z-[1] bg-transparent cursor-pointer rounded-3xl ${
+                theme === "dark" ? "text-white " : "text-dark"
+              } py-2 px-4   transition-all duration-500 w-max hover:bg-gradient-to-r hover:from-purple-700 hover:to-orange-500`}
             >
               Tech Stack
             </div>
             <div
               onClick={() => scrollToSection("experience")}
-             className={`z-[1] bg-transparent cursor-pointer rounded-3xl ${theme === 'dark' ? 'text-white ' : 'text-dark'} py-2 px-4   transition-all duration-500 w-max hover:bg-gradient-to-r hover:from-purple-700 hover:to-orange-500`}
+              className={`z-[1] bg-transparent cursor-pointer rounded-3xl ${
+                theme === "dark" ? "text-white " : "text-dark"
+              } py-2 px-4   transition-all duration-500 w-max hover:bg-gradient-to-r hover:from-purple-700 hover:to-orange-500`}
             >
               Experience
             </div>
 
             <div
               onClick={() => scrollToSection("projects")}
-             className={`z-[1] bg-transparent cursor-pointer rounded-3xl ${theme === 'dark' ? 'text-white ' : 'text-dark'} py-2 px-4   transition-all duration-500 w-max hover:bg-gradient-to-r hover:from-purple-700 hover:to-orange-500`}
+              className={`z-[1] bg-transparent cursor-pointer rounded-3xl ${
+                theme === "dark" ? "text-white " : "text-dark"
+              } py-2 px-4   transition-all duration-500 w-max hover:bg-gradient-to-r hover:from-purple-700 hover:to-orange-500`}
             >
               Projects
             </div>
-            <div className={`z-[1] bg-transparent cursor-pointer rounded-3xl ${theme === 'dark' ? 'text-white ' : 'text-dark'} py-2 px-4   transition-all duration-500 w-max hover:bg-gradient-to-r hover:from-purple-700 hover:to-orange-500`}>
+            <div
+              className={`z-[1] bg-transparent cursor-pointer rounded-3xl ${
+                theme === "dark" ? "text-white " : "text-dark"
+              } py-2 px-4   transition-all duration-500 w-max hover:bg-gradient-to-r hover:from-purple-700 hover:to-orange-500`}
+            >
               <a href="mailto:sumitjoshi181@gmail.com">Contact</a>
             </div>
             <div className="z-[1] bg-transparent bg-black py-2 pl-5">
@@ -80,29 +90,33 @@ const Navbar: React.FC<{}> = () => {
 
       {/* mobile screen dropdown */}
       <nav
-        className={`md:hidden backdrop-blur-none z-50 ${theme === 'dark' ? "bg-['#111']" : "bg-['#5b9cb0a6']"} fixed w-full`}
+        className={`md:hidden backdrop-blur-none z-50 ${
+          theme === "dark" ? "bg-['#111']" : "bg-['#5b9cb0a6']"
+        } fixed w-full`}
         id="navbar"
       >
         <div className="max-w-screen-xl flex flex-wrap items-center justify-end mx-auto px-2 pt-2">
-        <div className="z-[1] bg-transparent py-2 px-5">
-              <span className="cursor-pointer" onClick={toggleTheme}>
-                {theme === "light" ? (
-                  <Image
-                    src="/logo/stars.svg"
-                    width={30}
-                    height={30}
-                    alt="moon"
-                  />
-                ) : (
-                  <Image src="/logo/sun.svg" width={30} height={30} alt="sun" />
-                )}
-              </span>
-            </div>
+          <div className="z-[1] bg-transparent py-2 px-5">
+            <span className="cursor-pointer" onClick={toggleTheme}>
+              {theme === "light" ? (
+                <Image
+                  src="/logo/stars.svg"
+                  width={30}
+                  height={30}
+                  alt="moon"
+                />
+              ) : (
+                <Image src="/logo/sun.svg" width={30} height={30} alt="sun" />
+              )}
+            </span>
+          </div>
           <button
             onClick={() => setIsOpen(!isOpen)}
             data-collapse-toggle="navbar-hamburger"
             type="button"
-            className="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-white rounded-lg focus:outline-none focus:ring-0"
+            className={`inline-flex items-center justify-center p-2 w-10 h-10 text-sm ${
+              theme === "dark" ? "text-white" : "text-dark"
+            } rounded-lg focus:outline-none focus:ring-0`}
             aria-controls="navbar-hamburger"
             aria-expanded={isOpen ? "true" : "false"}
           >
@@ -126,7 +140,11 @@ const Navbar: React.FC<{}> = () => {
 
           {/* Dropdown Menu */}
           <div
-            className={`absolute top-full w-37 rounded-lg ${theme === 'dark' ? "bg-['#111']" : "bg-['#5b9cb0a6']"} shadow-md shadow-white/30 z-[10] transition-all duration-300 ease-in-out transform mt-2 ${
+            className={`absolute top-full w-37 rounded-lg ${
+              theme === "dark"
+                ? "bg-['#111']  shadow-white/30"
+                : "bg-['#5b9cb0a6']  shadow-dark/50"
+            } shadow-md z-[10] transition-all duration-300 ease-in-out transform mt-2 ${
               isOpen
                 ? "opacity-100 scale-100 translate-y-0 visible"
                 : "opacity-0 scale-95 -translate-y-2 invisible"
@@ -137,7 +155,9 @@ const Navbar: React.FC<{}> = () => {
               <li>
                 <div
                   onClick={() => scrollToSection("tech-stack")}
-                  className="block py-1 px-3 text-white rounded-sm cursor-pointer z-[2] "
+                  className={`lock py-1 px-3 ${
+                    theme === "dark" ? "text-white" : "text-dark"
+                  } rounded-sm cursor-pointer z-[2] `}
                 >
                   Tech Stack
                 </div>
@@ -145,7 +165,9 @@ const Navbar: React.FC<{}> = () => {
               <li>
                 <div
                   onClick={() => scrollToSection("experience")}
-                  className="block py-1 px-3 text-white rounded-sm cursor-pointer  z-[2]"
+                  className={`lock py-1 px-3 ${
+                    theme === "dark" ? "text-white" : "text-dark"
+                  } rounded-sm cursor-pointer z-[2] `}
                 >
                   Experience
                 </div>
@@ -153,7 +175,9 @@ const Navbar: React.FC<{}> = () => {
               <li>
                 <div
                   onClick={() => scrollToSection("projects")}
-                  className="block py-1 px-3 text-white rounded-sm cursor-pointer  z-[2]"
+                  className={`lock py-1 px-3 ${
+                    theme === "dark" ? "text-white" : "text-dark"
+                  } rounded-sm cursor-pointer z-[2] `}
                 >
                   Projects
                 </div>
